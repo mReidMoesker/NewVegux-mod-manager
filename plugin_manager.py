@@ -1,4 +1,12 @@
 from config import PLUGINS_TXT
+from locate_install_path import find_fallout_nv_path
+
+# Detect Fallout NV path at import (or move into functions if needed)
+nv_path = find_fallout_nv_path()
+if nv_path:
+    print(f"[INFO] Fallout New Vegas install path detected: {nv_path}")
+else:
+    print("[WARN] Fallout New Vegas install path not found.")
 
 def read_plugins():
     if not PLUGINS_TXT.exists():

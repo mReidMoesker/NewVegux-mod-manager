@@ -3,6 +3,14 @@ from pathlib import Path
 from config import DATA_DIR
 from plugin_manager import add_plugin
 from bsa_extract import FalloutNVBSA
+from locate_install_path import find_fallout_nv_path
+
+# Detect Fallout NV path at import (or move into install_mod if needed)
+nv_path = find_fallout_nv_path()
+if nv_path:
+    print(f"[INFO] Fallout New Vegas install path detected: {nv_path}")
+else:
+    print("[WARN] Fallout New Vegas install path not found.")
 
 #Import bsa files
 def extrac_bsa(bsa_path: Path, output_dir: Path):
