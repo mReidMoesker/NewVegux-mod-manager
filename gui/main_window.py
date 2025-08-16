@@ -14,30 +14,30 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(500, 200)
 
 
-    self.label = QLabel("Select an archive to install")
-    self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label = QLabel("Select an archive to install")
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-    self.install_button = QPushButton("Install Mod")
-    self.install_button.clicked.connect(self.select_install)
+        self.install_button = QPushButton("Install Mod")
+        self.install_button.clicked.connect(self.select_install)
 
-    self.mods_list = QListWidget()
-    self.mods_list.setMinimumHeight(100)
-    self.mods_list.setSelectionMode(QListWidget.NoSelection)
-    self.mods_list.setFocusPolicy(Qt.NoFocus)
-    self.mods_list.setAlternatingRowColors(True)
-    self.mods_list.setSortingEnabled(True)
+        self.mods_list = QListWidget()
+        self.mods_list.setMinimumHeight(100)
+        self.mods_list.setSelectionMode(QListWidget.NoSelection)
+        self.mods_list.setFocusPolicy(Qt.NoFocus)
+        self.mods_list.setAlternatingRowColors(True)
+        self.mods_list.setSortingEnabled(True)
 
-    layout = QVBoxLayout()
-    layout.addWidget(self.label)
-    layout.addWidget(self.install_button)
-    layout.addWidget(QLabel("Active Mods:"))
-    layout.addWidget(self.mods_list)
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        layout.addWidget(self.install_button)
+        layout.addWidget(QLabel("Active Mods:"))
+        layout.addWidget(self.mods_list)
 
-    container = QWidget()
-    container.setLayout(layout)
-    self.setCentralWidget(container)
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
 
-    self.refresh_mods_list()
+        self.refresh_mods_list()
 
 
     def select_install(self):
